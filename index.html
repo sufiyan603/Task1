@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Selection Boxes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .selection-box {
+            width: 380px;
+            border: 2px solid #2e7d32;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9fdf9;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .selection-box:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .options {
+            margin-top: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .option-row {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            gap: 12px;
+        }
+        select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 80px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleOptions(event) {
+            if (event.target.tagName === "SELECT") return;
+
+            const allOptions = document.querySelectorAll('.options');
+            const selectedBox = event.currentTarget.querySelector('.options');
+
+            allOptions.forEach(option => {
+                if (option !== selectedBox) {
+                    option.style.maxHeight = "0px";
+                }
+            });
+
+            if (selectedBox.style.maxHeight === "0px" || selectedBox.style.maxHeight === "") {
+                selectedBox.style.maxHeight = selectedBox.scrollHeight + "px";
+            } else {
+                selectedBox.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="selection-box" onclick="toggleOptions(event)">
+        <strong>2 Pair - DKK 345.00</strong>
+        <div class="options">
+            <div class="option-row">
+                <span>#1</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+            <div class="option-row">
+                <span>#2</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+        </div>
+    </div>
+    <div class="selection-box" onclick="toggleOptions(event)">
+        <strong>3 Pair - DKK 495.00</strong>
+        <div class="options">
+            <div class="option-row">
+                <span>#1</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+            <div class="option-row">
+                <span>#2</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+            <div class="option-row">
+                <span>#3</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+        </div>
+    </div>
+    <div class="selection-box" onclick="toggleOptions(event)">
+        <strong>4 Pair - DKK 645.00</strong>
+        <div class="options">
+            <div class="option-row">
+                <span>#1</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+            <div class="option-row">
+                <span>#2</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+            <div class="option-row">
+                <span>#3</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+            <div class="option-row">
+                <span>#4</span>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Red</option><option>Blue</option><option>Green</option></select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
