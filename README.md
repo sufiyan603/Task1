@@ -44,7 +44,7 @@ To deploy this project on **Vercel**, follow these steps:
 4. Your project will be live at a generated Vercel URL.
 
 ## Screenshot
-![Screenshot]("D:\task\task.png") 
+![Screenshot](task.png) 
 
 ## Future Enhancements
 - Add more customization options for users
