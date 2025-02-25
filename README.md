@@ -43,9 +43,6 @@ To deploy this project on **Vercel**, follow these steps:
 3. Follow the prompts to complete deployment.
 4. Your project will be live at a generated Vercel URL.
 
-## Screenshot
-![Screenshot](task.png) 
-
 ## Future Enhancements
 - Add more customization options for users
 - Improve mobile responsiveness
